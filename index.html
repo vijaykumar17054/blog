@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Database Recovery Techniques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="blog-title">Database Recovery Techniques</h1>
+            <p class="tagline">Ensure Data Integrity and Business Continuity</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#backup">Backup & Restore</a></li>
+            <li><a href="#transaction-logs">Transaction Logs</a></li>
+            <li><a href="#point-in-time">Point-in-Time Recovery</a></li>
+            <li><a href="#mirroring">Mirroring & Replication</a></li>
+        </ul>
+    </nav>
+
+    <section id="content" class="content">
+        <div class="container">
+            <h2 class="section-title">What is Database Recovery?</h2>
+            <p class="intro-text">Database recovery refers to the processes and strategies used to restore a database to its correct state after a failure, ensuring that data is consistent, intact, and available. Recovery methods vary depending on the nature of the failure and the system in use.</p>
+
+            <h2 id="backup" class="section-title">1. Backup and Restore</h2>
+            <div class="technique">
+                <p>Backup and restore are fundamental techniques for database recovery. Regular backups of your database allow you to recover from various types of failures, including corruption, accidental deletion, or hardware failures.</p>
+                <ul class="backup-types">
+                    <li><strong>Full Backup:</strong> A snapshot of the entire database, usually performed periodically.</li>
+                    <li><strong>Incremental Backup:</strong> A backup of the changes made since the last backup.</li>
+                    <li><strong>Differential Backup:</strong> Captures changes since the last full backup.</li>
+                </ul>
+            </div>
+
+            <h2 id="transaction-logs" class="section-title">2. Transaction Logs</h2>
+            <div class="technique">
+                <p>Transaction logs are vital in tracking changes made to the database. In the event of a failure, these logs can be used to restore the database to its last consistent state by rolling back incomplete transactions or applying committed ones.</p>
+                <p>Key features of transaction log-based recovery:</p>
+                <ul>
+                    <li><strong>Log-based recovery:</strong> Use logs to redo or undo changes after a crash.</li>
+                    <li><strong>Durability:</strong> Guarantees that once a transaction is committed, it will not be lost.</li>
+                </ul>
+            </div>
+
+            <h2 id="point-in-time" class="section-title">3. Point-in-Time Recovery</h2>
+            <div class="technique">
+                <p>Point-in-time recovery (PITR) allows you to restore the database to a specific time, often just before an issue occurred. By applying a series of backups and transaction logs, you can roll the database back to a specific point, minimizing data loss.</p>
+            </div>
+
+            <h2 id="mirroring" class="section-title">4. Mirroring and Replication</h2>
+            <div class="technique">
+                <p>Database mirroring and replication techniques are used to provide high availability and disaster recovery. These methods involve maintaining copies of a database across different servers or locations.</p>
+                <ul>
+                    <li><strong>Database Mirroring:</strong> One database acts as a mirror for another, providing failover capabilities.</li>
+                    <li><strong>Database Replication:</strong> Data from one database is copied and synchronized to another database, improving availability and load balancing.</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">Best Practices for Database Recovery</h2>
+            <ul class="best-practices">
+                <li>Perform regular backups and store them securely offsite.</li>
+                <li>Regularly test your recovery procedures to ensure they work as expected.</li>
+                <li>Keep transaction logs up to date to minimize data loss during recovery.</li>
+                <li>Implement database mirroring or replication to reduce downtime in case of failure.</li>
+                <li>Use automated monitoring tools to detect issues before they escalate.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 17054| Vijay kumar naidu</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
