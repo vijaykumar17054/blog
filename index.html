@@ -1,85 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Database Recovery Techniques</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Communication Network Layers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background-color: #4CAF50;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .scrolling-container {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 1000px;
+      height: 500px;
+      overflow-y: scroll;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .scrolling-item {
+      margin-bottom: 30px;
+      padding: 20px;
+      border-bottom: 1px solid #f0f0f0;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s forwards;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .scrolling-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .scrolling-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .scrolling-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .scrolling-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .scrolling-item:nth-child(5) {
+      animation-delay: 1s;
+    }
+
+    .scrolling-item:nth-child(6) {
+      animation-delay: 1.2s;
+    }
+
+    .scrolling-item:nth-child(7) {
+      animation-delay: 1.4s;
+    }
+
+    h2 {
+      color: #4CAF50;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .quote {
+      background-color: #e7f7e7;
+      border-left: 5px solid #4CAF50;
+      margin: 10px 0;
+      padding: 10px;
+      font-style: italic;
+    }
+
+    /* Styling for links and buttons (e.g., external references) */
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="blog-title">Database Recovery Techniques</h1>
-            <p class="tagline">Ensure Data Integrity and Business Continuity</p>
-        </div>
-    </header>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="#backup">Backup & Restore</a></li>
-            <li><a href="#transaction-logs">Transaction Logs</a></li>
-            <li><a href="#point-in-time">Point-in-Time Recovery</a></li>
-            <li><a href="#mirroring">Mirroring & Replication</a></li>
-        </ul>
-    </nav>
+  <header>
+    <h1>Understanding the 7 Layers of Data Communication Network</h1>
+    <p>Explore the OSI Model in detail to understand how data communication happens in a network.</p>
+    <p><strong>Presented by: Vijay</strong></p>
+    <p><strong>Roll No: 18079</strong></p>
+  </header>
 
-    <section id="content" class="content">
-        <div class="container">
-            <h2 class="section-title">What is Database Recovery?</h2>
-            <p class="intro-text">Database recovery refers to the processes and strategies used to restore a database to its correct state after a failure, ensuring that data is consistent, intact, and available. Recovery methods vary depending on the nature of the failure and the system in use.</p>
+  <section class="scrolling-container">
+    <div class="scrolling-item">
+      <h2>1. Physical Layer</h2>
+      <p>The Physical Layer defines the hardware elements involved in the data transfer. It transmits raw bits over the physical medium like cables, radio, or optical fibers. The primary focus of this layer is on the transmission and reception of the unstructured raw bit stream.</p>
+      <div class="quote">"The physical layer deals with the transmission of data over physical mediums." - OSI Model Reference</div>
+    </div>
 
-            <h2 id="backup" class="section-title">1. Backup and Restore</h2>
-            <div class="technique">
-                <p>Backup and restore are fundamental techniques for database recovery. Regular backups of your database allow you to recover from various types of failures, including corruption, accidental deletion, or hardware failures.</p>
-                <ul class="backup-types">
-                    <li><strong>Full Backup:</strong> A snapshot of the entire database, usually performed periodically.</li>
-                    <li><strong>Incremental Backup:</strong> A backup of the changes made since the last backup.</li>
-                    <li><strong>Differential Backup:</strong> Captures changes since the last full backup.</li>
-                </ul>
-            </div>
+    <div class="scrolling-item">
+      <h2>2. Data Link Layer</h2>
+      <p>The Data Link Layer ensures reliable data transfer between two devices, providing error detection and correction, and organizing bits into frames for transmission. This layer ensures that the data sent by the physical layer is error-free, and handles retransmission in case of lost data.</p>
+      <p><strong>Functions:</strong> Framing, error detection, and flow control.</p>
+      <div class="quote">"The data link layer is responsible for the correct transfer of data between devices on the same network." - Networking 101</div>
+    </div>
 
-            <h2 id="transaction-logs" class="section-title">2. Transaction Logs</h2>
-            <div class="technique">
-                <p>Transaction logs are vital in tracking changes made to the database. In the event of a failure, these logs can be used to restore the database to its last consistent state by rolling back incomplete transactions or applying committed ones.</p>
-                <p>Key features of transaction log-based recovery:</p>
-                <ul>
-                    <li><strong>Log-based recovery:</strong> Use logs to redo or undo changes after a crash.</li>
-                    <li><strong>Durability:</strong> Guarantees that once a transaction is committed, it will not be lost.</li>
-                </ul>
-            </div>
+    <div class="scrolling-item">
+      <h2>3. Network Layer</h2>
+      <p>The Network Layer handles routing and forwarding of data between different devices across the network. It is responsible for addressing and path selection. In a complex network, this layer enables data to move from one device to another device across multiple networks.</p>
+      <p><strong>Key Protocols:</strong> IP (Internet Protocol), ICMP (Internet Control Message Protocol).</p>
+    </div>
 
-            <h2 id="point-in-time" class="section-title">3. Point-in-Time Recovery</h2>
-            <div class="technique">
-                <p>Point-in-time recovery (PITR) allows you to restore the database to a specific time, often just before an issue occurred. By applying a series of backups and transaction logs, you can roll the database back to a specific point, minimizing data loss.</p>
-            </div>
+    <div class="scrolling-item">
+      <h2>4. Transport Layer</h2>
+      <p>The Transport Layer ensures end-to-end communication between devices. It is responsible for data segmentation, error recovery, and flow control. This layer breaks data into smaller chunks and ensures that they are delivered to the correct application on the receiving device.</p>
+      <p><strong>Key Protocols:</strong> TCP (Transmission Control Protocol), UDP (User Datagram Protocol).</p>
+    </div>
 
-            <h2 id="mirroring" class="section-title">4. Mirroring and Replication</h2>
-            <div class="technique">
-                <p>Database mirroring and replication techniques are used to provide high availability and disaster recovery. These methods involve maintaining copies of a database across different servers or locations.</p>
-                <ul>
-                    <li><strong>Database Mirroring:</strong> One database acts as a mirror for another, providing failover capabilities.</li>
-                    <li><strong>Database Replication:</strong> Data from one database is copied and synchronized to another database, improving availability and load balancing.</li>
-                </ul>
-            </div>
+    <div class="scrolling-item">
+      <h2>5. Session Layer</h2>
+      <p>The Session Layer establishes, maintains, and terminates communication sessions. It is responsible for managing dialog control between applications. It allows applications on different devices to establish a connection, synchronize data exchange, and control data flow.</p>
+      <p><strong>Examples:</strong> Remote Procedure Calls (RPC), SQL (Structured Query Language) sessions.</p>
+    </div>
 
-            <h2 class="section-title">Best Practices for Database Recovery</h2>
-            <ul class="best-practices">
-                <li>Perform regular backups and store them securely offsite.</li>
-                <li>Regularly test your recovery procedures to ensure they work as expected.</li>
-                <li>Keep transaction logs up to date to minimize data loss during recovery.</li>
-                <li>Implement database mirroring or replication to reduce downtime in case of failure.</li>
-                <li>Use automated monitoring tools to detect issues before they escalate.</li>
-            </ul>
-        </div>
-    </section>
+    <div class="scrolling-item">
+      <h2>6. Presentation Layer</h2>
+      <p>The Presentation Layer formats data for the application layer, ensuring that the data is in a readable form. It handles data encoding, compression, and encryption. This layer is important for ensuring that the data sent by the sender is in a format that the receiver can understand.</p>
+      <div class="quote">"This layer ensures that data is presented in a readable format for the application layer." - OSI Model Explained</div>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 17054| Vijay kumar naidu</p>
-        </div>
-    </footer>
+    <div class="scrolling-item">
+      <h2>7. Application Layer</h2>
+      <p>The Application Layer provides network services to the end-users. It interacts directly with software applications such as email, file transfer, and web browsing. This layer defines the protocols and interfaces for communication between software applications over a network.</p>
+      <p><strong>Examples:</strong> HTTP (HyperText Transfer Protocol), FTP (File Transfer Protocol), SMTP (Simple Mail Transfer Protocol).</p>
+      <div class="quote">"The application layer is the closest layer to the end-user, where software applications interface with the network." - Networking Fundamentals</div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2026 Data Network Blog. All rights reserved. | <a href="https://www.iso.org/iso/iso_7000.html">Learn more about OSI model</a></p>
+  </footer>
+
 </body>
 </html>
