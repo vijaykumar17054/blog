@@ -1,2 +1,0 @@
-# CM
-Database recovery techniques
