@@ -1,2 +1,2 @@
-# blog
+# CM
 Database recovery techniques
